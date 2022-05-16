@@ -16,7 +16,7 @@ func (u *UserService) GetUser(ID int64) (*model.User, error) {
 	userDao := dao.NewUser()
 	user, err := userDao.GetByID(ID)
 	if err != nil {
-		return nil, errors.WithMessagef(err, "service:GetUser(%d) failed", ID)
+		return nil, errors.WithMessagef(err, "service：GetUser(%d) failed", ID)
 	}
 	return user, err
 }

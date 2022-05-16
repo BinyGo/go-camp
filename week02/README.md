@@ -14,7 +14,7 @@ func (u *UserDao) GetByID(id int64) (*model.User, error) {
 	user := model.User{}
 	err := DB.Where("id = ?", id).Find(&user).Error
 	if err != nil {
-		return nil, errors.Wrap(err, "dao:GetByID failed")
+		return nil, errors.Wrap(err, fmt.Sprintf("dao：GetByID(%d) failed", id))
 	}
 	return user, nil
 }
