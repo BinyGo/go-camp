@@ -12,7 +12,7 @@ func NewUser() *UserService {
 	return &UserService{}
 }
 
-func (d *UserService) GetUser(ID int64) (*model.User, error) {
+func (u *UserService) GetUser(ID int64) (*model.User, error) {
 	userDao := dao.NewUser()
 	user, err := userDao.GetByID(ID)
 	if err != nil {

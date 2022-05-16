@@ -13,7 +13,7 @@ func NewUser() *UserDao {
 	return &UserDao{}
 }
 
-func (d *UserDao) GetByID(id int64) (*model.User, error) {
+func (u *UserDao) GetByID(id int64) (*model.User, error) {
 	//db伪方法getByID()
 	user, err := getByID(id)
 	if err != nil {
