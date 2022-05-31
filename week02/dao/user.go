@@ -9,6 +9,8 @@ import (
 	"github.com/pkg/errors"
 )
 
+var Db *sql.DB
+
 type UserDao struct{}
 
 func NewUser() *UserDao {
@@ -30,5 +32,9 @@ func (u *UserDao) GetByID(id int64) (*model.User, error) {
 }
 
 func getByID(id int64) (*model.User, error) {
-	return nil, sql.ErrNoRows
+	user := &model.User{}
+	row := Db.QueryRow("select id ,name from user where id = ?", id)
+	err := row.Scan(user.ID, user.Name)
+	return user, err
+	// return nil, sql.ErrNoRows
 }
