@@ -42,7 +42,7 @@ func GetUserHandler(c *gin.Context) {
 		})
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"code":    200,
+		"code":    code.Success,
 		"message": "success",
 		"data":    user,
 	})

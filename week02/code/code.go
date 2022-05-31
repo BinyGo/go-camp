@@ -4,6 +4,7 @@ import "errors"
 
 var (
 	ErrNotFound = errors.New("ErrNotFound")
-	NotFound    = 40001
-	SystemErr   = 50001
+	Success     = 200
+	NotFound    = 400
+	SystemErr   = 500
 )
