@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package blog.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "blog/api/blog/v1;v1";
+
+// The greeting service definition.
+service Blog {
+  // Sends a greeting
+  rpc GetArticle (GetArticleRequest) returns (GetArticleReply) {
+    option (google.api.http) = {
+      get: "/blog/{id}"
+    };
+  }
+}
+
+// The request message containing the user's name.
+message GetArticleRequest {
+  string id = 1;
+}
+
+// The response message containing the greetings
+message GetArticleReply {
+  string message = 1;
+}

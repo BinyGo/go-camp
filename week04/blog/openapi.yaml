@@ -1,0 +1,38 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: Blog API
+    description: The greeting service definition.
+    version: 0.0.1
+paths:
+    /blog/{id}:
+        get:
+            tags:
+                - Blog
+            description: Sends a greeting
+            operationId: Blog_GetArticle
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/blog.v1.GetArticleReply'
+components:
+    schemas:
+        blog.v1.GetArticleReply:
+            type: object
+            properties:
+                message:
+                    type: string
+            description: The response message containing the greetings
+tags:
+    - name: Blog
