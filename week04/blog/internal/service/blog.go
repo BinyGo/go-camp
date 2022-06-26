@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	v1 "github.com/blog/api/blog/v1"
+	v1 "blog/api/blog/v1"
 )
 
 type BlogService struct {
